@@ -9,20 +9,18 @@ function App() {
     try {
    //   const response = await fetch(`https://api.thecatapi.com/v1/images/search`)
 
-      //const url = `https://e-podjetnik.com/apiV2/loginmobile?user=volodfree34@gmail.com&pin=123123`
-      // const url = `https://e-podjetnik.com/apiV2/registermobile?code=7075-4477-2257-4229`
-      const url = `https://e-podjetnik.com/apiV2/registermobile?user=robert@epodjetnik.com&pin=123321`
+   const url = `http://localhost/apiV2/loginmobile?user=robert@epodjetnik.com&pin=123321`
+  //  const url = `https://e-podjetnik.com/apiV2/loginmobile?user=robert@epodjetnik.com&pin=123321`
+   // const url = `https://e-podjetnik.com/apiV2/registermobile?code=7075-4477-2257-4229`
+      // const url = `https://e-podjetnik.com/apiV2/registermobile?user=robert@epodjetnik.com&pin=123321`
       // const url = `https://e-podjetnik.com/apiV2/financialdata?year=2021`
       const response = await fetch(url,
       {
         method: "GET",
-        mode: 'cors',
+        // mode: 'cors',
         //referrerPolicy: 'no-referrer',
         headers: {
-          //"Access-Control-Allow-Origin": "*",
-          //"Access-Control-Allow-Headers": "*",
-
-          // "X-Api-Key": "mOX8EB669mAujaWH8LlzQz6JHeRCFviS",
+          "X-Api-Key": "mOX8EB669mAujaWH8LlzQz6JHeRCFviS",
           //"Content-Type": "application/json",
         },
       })
@@ -53,7 +51,7 @@ function App() {
   // }, [])
 
   fetchData()
-  
+
   const LoadingSpinner = () => <img alt = 'cat'src={catGif} />
   return <>{isLoading ? <LoadingSpinner /> : <img alt='cat' src={data} />}</>
 }
